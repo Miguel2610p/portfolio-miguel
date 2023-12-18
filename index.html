@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <!-- MENU ENCABEZADO -->
+    <div class="contenedor-header">
+        <header>
+            <div class="logo">
+                <a href="#">Miguel Vigoya</a>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#inicio" onclick="seleccionar()">INICIO</a></li>
+                    <li><a href="#sobremi" onclick="seleccionar()">SOBRE MI</a></li>
+                    <li><a href="#skills" onclick="seleccionar()">HABILIDADES</a></li>
+                    <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
+                    <li><a href="#portfolio" onclick="seleccionar()">PORTAFOLIO</a></li>
+                    <li><a href="#contacto" onclick="seleccionar()">CONTACTAME</a></li>
+                </ul>
+            </nav>
+            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </header>
+    </div>
+
+    <!-- SECCION INICIO -->
+    <br><br>
+    <section id="inicio" class="inicio">
+        <div class="contenido-banner">
+            <div class="contenedor-img">
+                <img src="img/hojaaa.jfif" alt="">
+            </div>
+            <h1>Miguel Vigoya</h1>
+            <br>
+            <h2>Ingeniero en Automatización</h2>
+            <div class="redes">
+                <a href="https://www.facebook.com/miguelangel.vigoyabolivar" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://twitter.com/miguel_vigoya" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://walink.co/f952ce" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://instagram.com/miguelvigoya?igshid=NWRmOTRvYzcwMW5t" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://github.com/Miguel2610p" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- SECCION SOBRE MI -->
+    <section id="sobremi" class="sobremi">
+        <div class="contenido-seccion">
+            <h2>Sobre mi</h2>
+            <p><span>Hola, soy Miguel Angel Vigoya Bolívar.</span> Tengo 22 años y recientemente terminé la carrera de ingeniería en automatización, soy un entusiasta del desarrollo web. Siempre con ganas de aprender y crecer profesionalmente, me apasiona crear cosas en la web.</p>
+            <div class="fila">
+                <!-- datos personales -->
+                <div class="col">
+                    <h3>Datos Personales</h3>
+                    <ul>
+                        <li>
+                            <strong>Nacimiento</strong>
+                            26-10-2001
+                        </li>
+                        <li>
+                            <strong>Teléfono</strong>
+                            +57 316-296-3699
+                        </li>
+                        <li>
+                            <strong>Email</strong>
+                            vigoya2001@hotmail.com
+                        </li>
+                        <li>
+                            <strong>Residencia</strong>
+                            Bogotá
+                        </li>
+                        <li>
+                            <strong>Cargo</strong>
+                            Freelance
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- intereses -->
+                <div class="col">
+                    <h3>Intereses</h3>
+                    <div class="contenedor-intereses">
+                        <div class="interes">
+                            <i class="fa-solid fa-gamepad"></i>
+                            <span>JUEGOS</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-solid fa-headphones"></i>
+                            <span>MUSICA</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-solid fa-plane"></i>
+                            <span>VIAJAR</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-solid fa-people-group"></i>
+                            <span>AMIGOS</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-solid fa-person-hiking"></i>
+                            <span>DEPORTE</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-solid fa-book"></i>
+                            <span>ESTUDIO</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-solid fa-car"></i>
+                            <span>AUTOS</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-solid fa-camera"></i>
+                            <span>FOTOS</span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <button id="descargarBtn">
+                Descargar CV <i class="fa-solid fa-download"></i>
+                <span class="overlay"></span>
+            </button>
+            <script>
+                document.getElementById('descargarBtn').addEventListener('click', function () {
+                    // Ruta local relativa al archivo PDF en la carpeta del proyecto
+                    var rutaArchivo = 'Hoja de vida Miguel.pdf';
+            
+                    // Crea un enlace temporal
+                    var enlace = document.createElement('a');
+                    enlace.href = rutaArchivo;
+            
+                    // Establece el atributo "download" para iniciar la descarga
+                    enlace.download = 'Hoja_de_vida_Miguel.pdf';
+            
+                    // Añade el enlace al cuerpo del documento y simula un clic
+                    document.body.appendChild(enlace);
+                    enlace.click();
+            
+                    // Remueve el enlace del cuerpo del documento
+                    document.body.removeChild(enlace);
+                });
+            </script>
+            
+        </div>
+    </section>
+
+    <!-- SECCION SKILLS -->
+    <section class="skills" id="skills">
+        <div class="contenido-seccion">
+            <h2>Habilidades</h2>
+            <br><br>
+            <div class="fila">
+                <!-- Technical Skill -->
+                <div class="col">
+                    <h3>Habilidades Técnicas</h3>
+                    <div class="skill">
+                        <span>Javascript</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>85%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>HTML & CSS</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>90%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>React</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>80%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Wordpress</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>60%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Firebase</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>85%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Professional Skills -->
+                <div class="col">
+                    <h3>Habilidades Profesionales</h3>
+                    <div class="skill">
+                        <span>Comunicación</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>85%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Trabajo en Equipo</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>95%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Creatividad</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>85%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Dedicación</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>99%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Aprendizaje</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>99%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION CURRICULUM -->
+    <section id="curriculum" class="curriculum">
+        <div class="contenido-seccion">
+            <h2>Curriculum</h2>
+            <div class="fila">
+                <div class="col izquierda">
+                    <div class="item izq">
+                        <h4>Javascript y MySQL</h4>
+                        <span class="casa">Universidad de La Salle</span>
+                        <span class="fecha">2021</span>
+                        <p>Mi introducción a la programación se produjo en la segunda mitad de 2021, 
+                            cuando cursaba el cuarto semestre de mi carrera en ingeniería en automatización. 
+                            En ese momento, cursé una materia llamada "Programación Aplicada", 
+                            que me sumergió en el mundo de Java y la programación orientada a objetos. Además, 
+                            en este curso adquirí conocimientos sobre MySQL y bases de datos.</p>
+                        <div class="conectori">
+                            <div class="circuloi"></div>
+                        </div>
+                    </div>
+                    <div class="item izq">
+                        <h4>Html y CSS</h4>
+                        <span class="casa">Universidad de La Salle</span>
+                        <span class="fecha">2021-2022</span>
+                        <p>
+                            Más adelante, continué con otra asignatura denominada "Sistemas de Información". 
+                            En este curso, se profundizó en el desarrollo de páginas web, utilizando tecnologías como HTML y CSS. 
+                            Durante esta materia, me sumergí en la creación de diversas landing pages, lo que me permitió fortalecer 
+                            y expandir mis habilidades en estas tecnologías.</p>
+                        <div class="conectori">
+                            <div class="circuloi"></div>
+                        </div>
+                    </div>
+                    <div class="item izq">
+                        <h4>React y Firebase</h4>
+                        <span class="casa">Universidad de La Salle</span>
+                        <span class="fecha">2022-2023</span>
+                        <p>En el octavo semestre de mi carrera, inicié la elaboración de mi proyecto de grado. Este consistió en el desarrollo
+                             de un sistema de información web diseñado para facilitar el acceso, seguimiento y administración de pacientes y 
+                             terapeutas en la clínica de optometría de la Universidad de La Salle. Para llevar a cabo este proyecto, 
+                             se empleó React como framework y Firebase como plataforma de base de datos.</p>
+                        <div class="conectori">
+                            <div class="circuloi"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col derecha">
+                    <div class="item der">
+                        <h4>GitHub</h4>
+                        <span class="casa">Universidad de La Salle</span>
+                        <span class="fecha">2022-2023</span>
+                        <p>En la elaboración de mi proyecto de grado, colaboré con un compañero de mi carrera. 
+                            Esto requirió que ambos adquiriéramos habilidades en el uso de GitHub para coordinar 
+                            nuestro trabajo de codificación de manera efectiva. Aprendí a crear repositorios, realizar commits 
+                            para rastrear las modificaciones realizadas y a trabajar en ramas separadas para gestionar el desarrollo 
+                            de manera más eficiente.</p>
+                        <div class="conectord">
+                            <div class="circulod"></div>
+                        </div>
+                    </div>
+                    <div class="item der">
+                        <h4>C</h4>
+                        <span class="casa">Universidad de La Salle</span>
+                        <span class="fecha">2023</span>
+                        <p>Durante mi noveno semestre, cursé a una materia denominada "Sistemas Digitales", donde adquirí conocimientos 
+                            sobre programación elemental en C. Como la manipulación de arrays, la creación de funciones, 
+                            el uso de estructuras condicionales y más. Además, durante este curso, aprendí a utilizar el software CodeWarrior, 
+                            el cual se empleó para programar máquinas de estados finitos en un microcontrolador.</p>
+                        <div class="conectord">
+                            <div class="circulod"></div>
+                        </div>
+                    </div>
+                    <div class="item der">
+                        <h4>Wordpress</h4>
+                        <span class="casa">Aprendizaje libre</span>
+                        <span class="fecha">2023</span>
+                        <p>A mitad del 2023, conocí la plataforma WordPress, la cual me pareció muy interesante ya que permite crear páginas web 
+                            de manera muy intuitiva y rápida. Me la pasé unas cuantas semanas testeando y creando páginas no muy complicadas, 
+                            pero con el objetivo de aprender y entender bien cómo funciona esta herramienta.</p>
+                        <div class="conectord">
+                            <div class="circulod"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION PORTFOLIO -->
+    <section id="portfolio" class="portfolio">
+        <div class="contenido-seccion">
+            <h2>PORTAFOLIO</h2>
+        <div class="galeria">
+            <div class="proyecto" onclick="redirigir('https://chipper-entremet-fe1e0c.netlify.app')">
+                <img src="img/relojess.JPG" alt="">
+                <div class="overlay">
+                    <h3>Tienda de relojes</h3>
+                    <p>Haz clic para ir</p>
+                </div>
+            </div>
+            <div class="proyecto" onclick="redirigir('https://animated-kitsune-63046b.netlify.app')">
+                <img src="img/calculadoraa.JPG" alt="">
+                <div class="overlay">
+                    <h3>Calculadora</h3>
+                    <p>Haz clic para ir</p>
+                </div>
+            </div>
+                <div class="proyecto" onclick="redirigir('https://glittery-fox-739af3.netlify.app')">
+                    <img src="img/htmll.JPG" alt="">
+                    <div class="overlay">
+                        <h3>Página Html</h3>
+                        <p>Haz clic para ir</p>
+                    </div>
+                </div>
+                <div class="proyecto" onclick="redirigir('https://gregarious-cat-5670ff.netlify.app')">
+                    <img src="img/trailers.JPG" alt="">
+                    <div class="overlay">
+                        <h3>Trailers de películas</h3>
+                        <p>Haz clic para ir</p>
+                    </div>
+                </div>
+                <div class="proyecto" onclick="redirigir('https://optometrialasalle.netlify.app')">
+                    <img src="img/tesis2.jpg" alt="">
+                    <div class="overlay">
+                        <h3>Sistema de información web</h3>
+                        <p>Haz clic para ir</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function redirigir(url) {
+            window.open(url, '_blank');
+        }
+    </script>
+
+    <!-- SECCION CONTACTAME -->
+    <section id="contacto" class="contacto">
+        <div class="contenido-seccion">
+            <h2>CONTACTAME</h2>
+            <div class="fila">
+                <!-- Formulario -->
+                <div class="col">
+                    <input type="text" placeholder="Tú Nombre">
+                    <input type="text" placeholder="Número telefónico">
+                    <input type="text" placeholder="Dirección de correo">
+                    <input type="text" placeholder="Tema">
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                    <button>
+                        Enviar Mensaje
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span class="overlay"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <a href="#inicio" class="arriba">
+            <i class="fa-solid fa-angles-up"></i>
+        </a>
+        <div class="redes">
+            <a href="https://www.facebook.com/miguelangel.vigoyabolivar" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://twitter.com/miguel_vigoya" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://walink.co/f952ce" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://instagram.com/miguelvigoya?igshid=NWRmOTRvYzcwMW5t" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://github.com/Miguel2610p" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
